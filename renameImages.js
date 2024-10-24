@@ -30,8 +30,7 @@ const renameImages = async (directory) => {
       const title = await scrapeGettyImages(imageId);
 
       if (title) {
-        // Take the first 2-3 words and format the new filename
-        const titleWords = title.split(" ").slice(0, 2);
+        const titleWords = title.split(" ").slice(0, 5);
         const newFilename = `${titleWords.join("-")}-GettyImages-${imageId}.jpg`;
 
         const oldPath = path.join(directory, filename);
